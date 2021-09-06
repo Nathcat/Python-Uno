@@ -30,6 +30,11 @@ class Card:  # Card parent class
 # Blue cards
 
 
+class B_0:
+    def __init__(self):
+        super().__init__("B", 0)
+
+
 class B_1:
     def __init__(self):
         super().__init__("B", 1)
@@ -76,6 +81,11 @@ class B_9:
 
 
 # Red cards
+
+
+class R_0:
+    def __init__(self):
+        super().__init__("R", 0)
 
 
 class R_1:
@@ -126,6 +136,11 @@ class R_9:
 # Green cards
 
 
+class G_0:
+    def __init__(self):
+        super().__init__("G", 0)
+
+
 class G_1:
     def __init__(self):
         super().__init__("G", 1)
@@ -172,6 +187,11 @@ class G_9:
 
 
 # Yellow cards
+
+
+class Y_0:
+    def __init__(self):
+        super().__init__("Y", 0)
 
 
 class Y_1:
@@ -252,21 +272,109 @@ class switch_colour:
         super().__init__("RESET", "switch")
 
 
-class R_change:
+class R_reverse:
     def __init__(self):
         super().__init__("R", "reverse")
 
 
-class B_change:
+class B_reverse:
     def __init__(self):
         super().__init__("B", "reverse")
 
 
-class Y_change:
+class Y_reverse:
     def __init__(self):
         super().__init__("Y", "reverse")
 
 
-class G_change:
+class G_reverse:
     def __init__(self):
         super().__init__("G", "reverse")
+
+
+class R_skip:
+    def __init__(self):
+        super().__init__("R", "skip")
+
+
+class B_skip:
+    def __init__(self):
+        super().__init__("B", "skip")
+
+
+class G_skip:
+    def __init__(self):
+        super().__init__("G", "skip")
+
+
+class Y_skip:
+    def __init__(self):
+        super().__init__("Y", "skip")
+
+
+# Static functions
+
+
+def generate_deck():  # Generates a full deck of all cards
+    return [
+        B_0(),
+        B_1(),
+        B_2(),
+        B_3(),
+        B_4(),
+        B_5(),
+        B_6(),
+        B_7(),
+        B_8(),
+        B_9(),
+        B_add_2(),
+        B_reverse(),
+        B_skip(),
+
+        R_0(),
+        R_1(),
+        R_2(),
+        R_3(),
+        R_4(),
+        R_5(),
+        R_6(),
+        R_7(),
+        R_8(),
+        R_9(),
+        R_add_2(),
+        R_reverse(),
+        R_skip(),
+
+        G_0(),
+        G_1(),
+        G_2(),
+        G_3(),
+        G_4(),
+        G_5(),
+        G_6(),
+        G_7(),
+        G_8(),
+        G_9(),
+        G_add_2(),
+        G_reverse(),
+        G_skip(),
+
+        Y_0(),
+        Y_1(),
+        Y_2(),
+        Y_3(),
+        Y_4(),
+        Y_5(),
+        Y_6(),
+        Y_7(),
+        Y_8(),
+        Y_9(),
+        Y_add_2(),
+        Y_reverse(),
+        Y_skip(),
+
+        add_4(),
+        add_4(),
+        switch_colour(),
+        switch_colour()
+    ]
