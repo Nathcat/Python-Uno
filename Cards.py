@@ -26,6 +26,9 @@ class Card:  # Card parent class
     def __str__(self):
         return colours[self.colour] + self.number + colours["RESET"]
 
+    def __eq__(self, other):
+        return (other.colour == self.colour) and (other.number == self.number)
+
 
 # Blue cards
 
