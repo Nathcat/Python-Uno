@@ -8,15 +8,17 @@ Date: 06/09/2021
 """
 
 
+# TODO: Make sure that black cards can always be played, ie bypass can_play check
+
 from Cards import *
 import random
 
 
 class TurnCounter:
     def __init__(self, number_of_players):
-        self.turn = 1
+        self.turn = 0
         self.__direction = 1
-        self.__number_of_players = number_of_players
+        self.__number_of_players = number_of_players - 1
 
     def next_turn(self):
         self.turn += self.__direction
@@ -37,7 +39,7 @@ def generate_player_deck():
         choice = None
         index = None
         while choice is None or choice in player:
-            index = random.randint(len(deck))
+            index = random.randint(0, len(deck))
             choice = deck[index]
 
         player.append(choice)
@@ -67,10 +69,11 @@ if __name__ == "__main__":
     while True:
         print(f"\n--------------------\nIt's player {turn_counter.turn}'s turn!\n\n")
 
-        print(cards_played[-1] + '\n\n')
+        print(str(cards_played[-1]) + '\n\n')
+
 
         for card in player_decks[turn_counter.turn]:
-            print(card + ", ", end="")
+            print(str(card) + ", ", end="")
 
         while True:
             command = input("\n\nEnter action > ").split(" ")
